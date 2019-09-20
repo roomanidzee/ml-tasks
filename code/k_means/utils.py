@@ -12,7 +12,10 @@ def get_average_point(points: List[Point]) -> Point:
     first_dim = sum([item.x for item in points])
     second_dim = sum([item.y for item in points])
 
-    return Point(x=first_dim / points_count, y=second_dim / points_count)
+    return Point(
+        x=first_dim / points_count,
+        y=second_dim / points_count
+    )
 
 
 def get_distance(first: Point, second: Point) -> Float:

@@ -22,5 +22,5 @@ def generate_random_points(
 
     return [
         Point(x=random.uniform(start, end), y=random.uniform(start, end))
-        for i in range(limit)
+        for _ in range(limit)
     ]
