@@ -13,7 +13,11 @@ class Point:
     y: Float = 0.0
 
 
-def generate_random_points(start: Float, end: Float, limit: Integer) -> List[Point]:
+def generate_random_points(
+        start: Float,
+        end: Float,
+        limit: Integer
+) -> List[Point]:
     """Method for generating random points."""
 
     return [
