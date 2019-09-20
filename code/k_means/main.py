@@ -3,21 +3,21 @@ import random
 from typing import List
 from collections import defaultdict
 
-from code.commons import Point, Integer, Float
+from code import commons
 from code.k_means.utils import get_distance, get_average_point
 
 
 def generate_k_points(
-        points: List[Point],
-        limit: Integer
-) -> List[Point]:
+        points: List[commons.Point],
+        limit: commons.Integer
+) -> List[commons.Point]:
     """Generate k random points from there range."""
 
     first_dim = [item.x for item in points]
     second_dim = [item.y for item in points]
 
     return [
-        Point(
+        commons.Point(
             x=random.uniform(min(first_dim), max(first_dim)),
             y=random.uniform(min(second_dim), max(second_dim))
         )
@@ -26,9 +26,9 @@ def generate_k_points(
 
 
 def assign_points(
-        points: List[Point],
-        centers: List[Point]
-) -> List[Float]:
+        points: List[commons.Point],
+        centers: List[commons.Point]
+) -> List[commons.Float]:
     """Assign index of center point to existed point"""
     assignments = []
 
@@ -49,9 +49,9 @@ def assign_points(
 
 
 def update_centers(
-        points: List[Point],
-        assignments: List[Float]
-) -> List[Point]:
+        points: List[commons.Point],
+        assignments: List[commons.Float]
+) -> List[commons.Point]:
     """Compute center for each assignment"""
 
     new_centers = defaultdict(list)
