@@ -1,4 +1,4 @@
-from code.k_means.main import generate_k_points, assign_points, update_centers
+from src.k_means.main import generate_k_points, assign_points, update_centers
 
 
 def test_k_means(prepared_random_points):

@@ -1,10 +1,11 @@
 from typing import List
 from math import sqrt
 
-from code import commons
+from src.commons.classes import Point
+from src.commons.types import Float
 
 
-def get_average_point(points: List[commons.Point]) -> commons.Point:
+def get_average_point(points: List[Point]) -> Point:
     """Get average point from points input"""
 
     points_count = float(len(points))
@@ -12,13 +13,13 @@ def get_average_point(points: List[commons.Point]) -> commons.Point:
     first_dim = sum([item.x for item in points])
     second_dim = sum([item.y for item in points])
 
-    return commons.Point(
+    return Point(
         x=first_dim / points_count,
         y=second_dim / points_count
     )
 
 
-def get_distance(first: commons.Point, second: commons.Point) -> commons.Float:
+def get_distance(first: Point, second: Point) -> Float:
     """Get distance between two points"""
 
     return sqrt(

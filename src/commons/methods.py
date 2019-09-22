@@ -1,16 +1,8 @@
 import random
+from typing import List
 
-from typing import TypeVar, List
-from dataclasses import dataclass
-
-Integer = TypeVar('Integer', int, int)
-Float = TypeVar('Float', float, float)
-
-
-@dataclass
-class Point:
-    x: Float = 0.0
-    y: Float = 0.0
+from src.commons.classes import Point
+from src.commons.types import Float, Integer
 
 
 def generate_random_points(
