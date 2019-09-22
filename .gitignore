@@ -1,5 +1,6 @@
 
 .idea
+*.gif
 
 *.iml
 modules.xml
