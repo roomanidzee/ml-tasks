@@ -1,5 +1,8 @@
 import sys
+import math
 import random
+
+
 from typing import List
 from collections import defaultdict
 
@@ -57,10 +60,32 @@ def update_centers(
 
     new_centers = defaultdict(list)
 
+    pi = 3.14
+    k = len(set(assignments))
+    n = len(points)
+
     for assignment, point in zip(assignments, points):
         new_centers[assignment].append(point)
 
-    return [
+    averages = [
         get_average_point(item)
         for item in list(new_centers.values())
     ]
+
+    result = []
+
+    for old_center, point in zip(points, averages):
+        distance = get_distance(old_center, point)
+
+        result.append(
+            Point(
+                x=point.x + (distance * math.cos(
+                    (2 * pi * k) / n
+                )),
+                y=point.y + (distance * math.sin(
+                    (2 * pi * k) / n
+                ))
+            )
+        )
+
+    return result
