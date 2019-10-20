@@ -13,4 +13,10 @@ class Point:
 class PointStructure:
     point_id: Integer
     point_data: Point
-    is_marked: Boolean
+    is_marked: Boolean = False
+
+
+@dataclass
+class PointsConnection:
+    source_id: Integer
+    target_id: Integer
