@@ -1,8 +1,6 @@
 from typing import List
-from math import sqrt
 
 from src.commons.classes import Point
-from src.commons.types import Float
 
 
 def get_average_point(points: List[Point]) -> Point:
@@ -16,14 +14,4 @@ def get_average_point(points: List[Point]) -> Point:
     return Point(
         x=first_dim / points_count,
         y=second_dim / points_count
-    )
-
-
-def get_distance(first: Point, second: Point) -> Float:
-    """Get distance between two points"""
-
-    return sqrt(
-        (second.x - first.x) ** 2
-        +
-        (second.y - first.y) ** 2
     )

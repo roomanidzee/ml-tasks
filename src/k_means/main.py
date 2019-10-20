@@ -6,9 +6,10 @@ import random
 from typing import List
 from collections import defaultdict
 
+from src.commons.methods import get_distance
 from src.commons.classes import Point
 from src.commons.types import Integer, Float
-from src.k_means.utils import get_distance, get_average_point
+from src.k_means.utils import get_average_point
 
 
 def generate_k_points(
