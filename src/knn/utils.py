@@ -18,3 +18,16 @@ def convert_df_to_np(
     ]
 
     return np.array(data), labels
+
+
+def normalize_data(input_data: np.ndarray):
+
+    min_values = input_data.min(0)
+    max_values = input_data.max(0)
+
+    ranges = max_values - min_values
+    first_value = input_data.shape[0]
+
+    normalized_data = (input_data - np.tile(min_values, (first_value, 1))) / np.tile(ranges, (first_value, 1))
+
+    return normalized_data, ranges, min_values
