@@ -20,7 +20,10 @@ def convert_df_to_np(
     return np.array(data), labels
 
 
-def normalize_data(input_data: np.ndarray):
+def normalize_data(
+        input_data: np.ndarray
+) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """For case, if you need to normalize data"""
 
     min_values = input_data.min(0)
     max_values = input_data.max(0)
