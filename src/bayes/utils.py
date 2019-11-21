@@ -3,10 +3,12 @@ import csv
 from typing import Tuple, List
 from src.commons.types import Float
 
+CSV_DATA = Tuple[List[List[Float]], List[List[Float]]]
+
 
 def load_data(
         csv_path: str
-) -> Tuple[List[List[Float]], List[List[Float]]]:
+) -> CSV_DATA:
 
     with open(csv_path, 'r') as csv_file:
         data_reader = csv.reader(csv_file)
