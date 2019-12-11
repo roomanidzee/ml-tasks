@@ -1,5 +1,5 @@
 # ml-tasks
-Repo for tasks of machine learning
+Repo for ML tasks
 
 ## Launch of tests
 ```python -m pytest tests```
