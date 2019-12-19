@@ -7,6 +7,6 @@ import pytest
 def file_path():
     file_path = Path(
         __file__
-    ).parent.parent.parent.parent / Path('resources', 'bayes_data.csv')
+    ).parent.parent.parent / Path('resources', 'bayes_data.csv')
 
     return str(file_path)
