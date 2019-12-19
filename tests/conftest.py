@@ -2,6 +2,7 @@ import random
 
 import pytest
 import pandas as pd
+import numpy as np
 
 from src.commons.classes import Point
 
@@ -34,3 +35,28 @@ def test_df():
     ]
 
     return pd.DataFrame(data)
+
+
+@pytest.fixture
+def test_numpy_arrays(test_df):
+
+    limit = 5
+
+    lists = [
+        [
+            [
+                random.choice(list(range(limit))),
+                random.choice(list(range(limit)))
+            ]
+            for _ in range(limit)
+        ],
+        [
+            [
+                random.choice(list(range(limit))),
+                random.choice(list(range(limit)))
+            ]
+            for _ in range(limit)
+        ]
+    ]
+
+    return np.array(lists[0]), np.array(lists[1])

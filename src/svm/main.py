@@ -22,7 +22,10 @@ class Predictor:
         for z, x_temp, y in zip(self.weights, self.vectors, self.labels):
             result += z * y * calculate_util(x_temp, x)
 
-        return np.sign(result).item()
+        try:
+            return np.sign(result).item()
+        except ValueError:
+            return np.sign(result)[0]
 
 
 def gram_matrix(x):
