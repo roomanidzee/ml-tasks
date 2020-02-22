@@ -2,7 +2,7 @@
 name = "ml-tasks"
 version = "0.0.1"
 description = "Tasks for ML course"
-authors = ["y"]
+authors = ["Андрей Романов <romanov_andrey_vl@protonmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
